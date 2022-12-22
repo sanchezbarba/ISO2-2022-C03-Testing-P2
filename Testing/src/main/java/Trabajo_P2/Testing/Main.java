@@ -7,12 +7,11 @@ import java.util.Scanner;
  * Trabajo-P2-Testing
  *
  */
-public class Main 
-{
+public class Main {
 	final static Scanner TECLADO = new Scanner(System.in);
-    public static void main( String[] args )
-    {
-    	try {
+
+	public static void main(String[] args) {
+		try {
 			System.out.println("Introduzca la longitud de los lados del triangulo");
 			System.out.println("Lado 1:");
 			int lado1 = TECLADO.nextInt();
@@ -46,7 +45,7 @@ public class Main
 
 			if (ladosCorrectos && angulosCorrectos) {
 				System.out.println(
-						"El triángulo es " + triangulo.getTipoSegunLado() + " segun sus lados y " + triangulo.getTipoSegunAngulo() + " segun sus angulos");
+						"El triángulo es " + triangulo.getTipoSegunLado() + " " + triangulo.getTipoSegunAngulo());
 			}
 
 		} catch (InputMismatchException e) {
@@ -56,5 +55,5 @@ public class Main
 		} catch (anguloException e) {
 			e.printStackTrace();
 		}
-    }
+	}
 }

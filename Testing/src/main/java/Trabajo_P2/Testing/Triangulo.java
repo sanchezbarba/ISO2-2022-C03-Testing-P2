@@ -16,6 +16,8 @@ public class Triangulo {
 		this.angulo1 = comprobarAngulo(angulo1);
 		this.angulo2 = comprobarAngulo(angulo2);
 		this.angulo3 = comprobarAngulo(angulo3);
+		clasificarSegunLado();
+		clasificarSegunAngulo();
 	}
 
 	public int getLado1() {
@@ -109,7 +111,7 @@ public class Triangulo {
 			this.tipoSegunLado = "Equilatero";
 		} else if (this.lado1 == this.lado2 || this.lado1 == this.lado3 || this.lado2 == this.lado3) {
 			this.tipoSegunLado = "Isosceles";
-		} else {
+		} else if (this.lado1 != this.lado2 && this.lado1 != this.lado3 && this.lado2 != this.lado3) {
 			this.tipoSegunLado = "Escaleno";
 		}
 	}
@@ -122,13 +124,12 @@ public class Triangulo {
 		if (this.angulo1 < 90 && this.angulo2 < 90 && this.angulo3 < 90) {
 			this.tipoSegunAngulo = "Acutangulo";
 		}
-		if ((this.angulo1 > 90 && this.angulo1 < 180) || (this.angulo2 > 90 && this.angulo2 < 180)
-				|| (this.angulo3 > 90 && this.angulo3 < 180)) {
+		if ((this.angulo1 > 90 && this.angulo1 < 180) || (this.angulo2 > 90 && this.angulo2 < 180) || (this.angulo3 > 90 && this.angulo3 < 180)) {
 			this.tipoSegunAngulo = "Obtusangulo";
 		}
 	}
-	
-	public static boolean comprobarLado3(Triangulo t) { //teorema del coseno
+
+	public static boolean comprobarLado3(Triangulo t) { // teorema del coseno
 		boolean correcto = false;
 		int l1 = t.getLado1();
 		int l2 = t.getLado2();
